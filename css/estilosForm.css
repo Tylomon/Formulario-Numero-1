@@ -1,25 +1,168 @@
-*{
+/*Se eliminan margenes y paddinds por
+defecto, posteriormnete se ajustara cada uno segun
+sea necesario*/
+
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body{
-  height:100%;
-  margin:0;
+/*Ajuste Body*/
+
+html, body {
+  margin: 0;
   display: flex;
   flex-direction: column;
+  
 }
-
-.fondosvg{
+header{
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 15px;
+}
+h1{
+  font-family: Lobster;
+}
+.fondoglobalsvg { 
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
   background-image: url(../img/Fondo.svg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   margin: auto;
   width: 100%;
-  height: 100%;
+  
+}
+
+/*imagen Fondo del formulario*/
+
+.imagencentral {
+  background-image: url(../img/Encabezado.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  margin: auto;
+  width: 450px;
+  height: 400px;
+}
+
+
+
+/*Generador de espacio*/
+
+.space {
+  width: 400px;
+  height: 180px;
+}
+
+@media (max-width: 453px) {
+  .imagencentral {
+    width: 100%;
+    height: 100%;
+    min-width: 339px;
   }
+  .space {
+    width: 100%;
+    height: 180px;
+  }
+}
+/*Subcontainer, recuadro blanco con el formulario*/
+
+.subcontainer {
+  background-color: white;
+  padding-top: 27px;
+}
+
+.label {
+  font-size: 0px;
+}
+
+.invisible {
+  height: 0px;
+  width: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+/*Contenedor de Entrdas de Texto*/
+
+/*font-family: 'Bebas Neue', cursive;*/
+
+.Fila {
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 15px;
+
+}
+
+
+input {
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+  border:hidden;  
+  border-bottom: .3px solid #8B8F8C; 
+  padding-bottom: 1px; 
+}
+
+
+
+.formbox {
+  width: 180px;  
+}
+
+.email {
+  width: 390px;
+}
+
+.email::placeholder {
+  text-align: center;
+}
+
+@media (max-width: 453px) {
+
+  .Fila{
+    display: flex;
+    flex-direction: column;    
+  }
+  input {
+    margin: auto; 
+    width: 200px; 
+    margin-top:7px;
+    margin-bottom: 7px;
+  }
+ 
+  input::placeholder {
+    text-align: center;
+  }
+  .email {
+    width: 200px;
+    margin:auto;
+  }
+
+ 
+}
+
+
+.mascotas {
+  box-sizing:border-box;
+  width: 200px;
+  height: 500px;
+  background-image: url(../img/Mascotas.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: auto;
+ 
+}
+
 /*
 @import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
 
@@ -46,6 +189,7 @@ body {
 }
 
 /* mobile friendly alternative to using background-attachment: fixed */
+
 /*
 body::before {
   content: '';
@@ -141,7 +285,9 @@ button {
   text-align: center;
 }
 */
+
 /* form */
+
 /*
 form {
   background: var(--color-darkblue-alpha);
